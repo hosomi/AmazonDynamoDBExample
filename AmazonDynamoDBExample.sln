@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazonDynamoDBExample", "AmazonDynamoDBExample\AmazonDynamoDBExample.csproj", "{0F034B5C-AAF7-4EFE-ACE4-0002EDAB34CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D943428-288E-40CD-8542-3DE265E746E7}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonDynamoDBExample.Tests", "AmazonDynamoDBExample.Tests\AmazonDynamoDBExample.Tests.csproj", "{8E817A61-A68D-429F-A712-D87FB274AC9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F034B5C-AAF7-4EFE-ACE4-0002EDAB34CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F034B5C-AAF7-4EFE-ACE4-0002EDAB34CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F034B5C-AAF7-4EFE-ACE4-0002EDAB34CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F034B5C-AAF7-4EFE-ACE4-0002EDAB34CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E817A61-A68D-429F-A712-D87FB274AC9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E817A61-A68D-429F-A712-D87FB274AC9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E817A61-A68D-429F-A712-D87FB274AC9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E817A61-A68D-429F-A712-D87FB274AC9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78E22D73-F96A-42FF-BD93-B277286F56F4}
+	EndGlobalSection
+EndGlobal
