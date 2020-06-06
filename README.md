@@ -1,1 +1,1 @@
-# AWSDynamoDBExample
+# AmazonDynamoDBExample
