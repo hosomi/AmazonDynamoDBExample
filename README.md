@@ -33,7 +33,7 @@ __http://localhost:8001/__
 
 ---
 
-## :book: 
+## :book: リファレンス
 
 [Amazon DynamoDB 開発者ガイド PDF](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/dynamodb-dg.pdf)
 
