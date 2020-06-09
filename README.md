@@ -33,8 +33,9 @@ __http://localhost:8001/__
 
 ---
 
+## :book: 
 
-
+[Amazon DynamoDB äJî≠é“ÉKÉCÉh PDF](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/dynamodb-dg.pdf)
 
 
 
