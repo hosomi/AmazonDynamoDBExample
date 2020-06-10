@@ -29,12 +29,29 @@ namespace AmazonDynamoDBExample.Repositories
             return await DDBContext.LoadAsync<Music>(Artist, SongTitle);
         }
 
-
-
         public async Task MergeEntityAsync(Music entity)
         {
             await DDBContext.SaveAsync(entity);
         }
+
+        public async Task BatchWriteAsync(List<Music> list)
+        {
+            var writer = DDBContext.CreateBatchWrite<Music>();
+            writer.AddPutItems(list);
+            await writer.ExecuteAsync();
+        }
+        public async Task<List<Music>> BatchGetAsync(List<Music> keyList)
+        {
+            var getter = DDBContext.CreateBatchGet<Music>();
+            keyList.ForEach((Music key) => {
+
+                getter.AddKey(key.Artist, key.SongTitle);
+            });
+
+            await getter.ExecuteAsync();
+            return getter.Results;
+        }
+
 
         public async Task DeleteEntityAsync(string Artist, string SongTitle)
         {
