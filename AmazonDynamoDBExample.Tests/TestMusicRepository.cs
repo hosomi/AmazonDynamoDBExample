@@ -3,6 +3,7 @@ using Amazon.DynamoDBv2.DataModel;
 using AmazonDynamoDBExample.Entities;
 using AmazonDynamoDBExample.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Threading.Tasks;
 
 namespace AmazonDynamoDBExample.Tests
@@ -27,7 +28,7 @@ namespace AmazonDynamoDBExample.Tests
             var DDBContext = new DynamoDBContext(DDBClient, config);
 
             MusicRepository repo = new MusicRepository(DDBContext);
-
+            DateTime lastModified = DateTime.Now.LocalTime();
             Music entity = new Music
             {
                 Artist = "No One You Know",
@@ -35,17 +36,17 @@ namespace AmazonDynamoDBExample.Tests
                 AlbumTitle = "Hey Now",
                 CriticRating = 8.4,
                 Genre = "Country",
-                Year = 1984
+                Year = 1984,
+                LastModified = lastModified
             };
             await repo.MergeEntityAsync(entity);
-
 
             Music entity2 = await repo.GetEntityAsync(entity.Artist, entity.SongTitle);
             Assert.IsNotNull(entity2);
 
             Assert.AreEqual(entity.Artist, entity2.Artist);
             Assert.AreEqual(entity.SongTitle, entity2.SongTitle);
-
+            Assert.AreEqual(entity.LastModified.ToString("yyyy-MM-ddTHH:mm:ss"), entity2.LastModified.ToString("yyyy-MM-ddTHH:mm:ss"));
 
             await repo.DeleteEntityAsync(entity.Artist, entity.SongTitle);
             Music entity3 = await repo.GetEntityAsync(entity.Artist, entity.SongTitle);

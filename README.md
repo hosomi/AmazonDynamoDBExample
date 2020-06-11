@@ -29,7 +29,9 @@ __http://localhost:8001/__
 ## Sample Table &amp; Sample Code
 
 :link: [DynamoDB テーブルの基本オペレーション - Amazon DynamoDB](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html)  
-:link: [.NET での DynamoDB テーブルの操作 - Amazon DynamoDB](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/LowLevelDotNetWorkingWithTables.html)
+:link: [.NET での DynamoDB テーブルの操作 - Amazon DynamoDB](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/LowLevelDotNetWorkingWithTables.html)  
+:link: [.NET: オブジェクト永続性モデル - Amazon DynamoDB](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/DotNetSDKHighLevel.html)  
+
 
 ---
 
