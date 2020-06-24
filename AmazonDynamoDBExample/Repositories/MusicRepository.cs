@@ -90,5 +90,43 @@ namespace AmazonDynamoDBExample.Repositories
             };
             return await DDBClient.DeleteItemAsync(requestDelete);
         }
+
+        public async Task WriteRequests(List<Dictionary<string, AttributeValue>> list)
+        {
+
+            List<WriteRequest> writeRequest = new List<WriteRequest>();
+            list.ForEach((Dictionary<string, AttributeValue> item) => {
+                writeRequest.Add(
+                    new WriteRequest
+                    {
+                        PutRequest = new PutRequest
+                        {
+                            Item = item
+                        }
+                    }
+                );
+            });
+            await BatchWriteItem(writeRequest);
+        }
+
+        private async Task BatchWriteItem(List<WriteRequest> list)
+        {
+
+            var request = new BatchWriteItemRequest
+            {
+                ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL,
+            };
+
+            request.RequestItems["Music"] = list;
+
+            BatchWriteItemResponse response;
+            do
+            {
+                response = await DDBClient.BatchWriteItemAsync(request);
+                request.RequestItems = response.UnprocessedItems;
+
+            } while (response.UnprocessedItems.Count > 0);
+        }
+
     }
 }
